@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Permite que la aplicación se adapte a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="PokéExplorer - Aplicación web interactiva para explorar Pokémon utilizando PokéAPI."
+    >
+
+    <title>PokéExplorer | Explorador Pokémon</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ENCABEZADO
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <div class="brand">
+
+                <span class="brand-icon">⚡</span>
+
+                <div>
+
+                    <h1>PokéExplorer</h1>
+
+                    <p>Explora el mundo Pokémon</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Botón para cambiar entre modo claro y oscuro -->
+
+            <button
+                id="themeButton"
+                class="theme-button"
+                type="button"
+                aria-label="Cambiar tema"
+            >
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================================
+             PRESENTACIÓN
+             ================================================= -->
+
+        <section class="hero">
+
+            <span class="hero-badge">
+                POKÉDEX INTERACTIVA
+            </span>
+
+
+            <h2>
+                Descubre tu próximo Pokémon
+            </h2>
+
+
+            <p>
+                Busca un Pokémon por su nombre o explora
+                diferentes criaturas utilizando información
+                obtenida desde PokéAPI.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUSCADOR
+             ================================================= -->
+
+        <section class="search-section">
+
+            <form
+                id="searchForm"
+                class="search-form"
+            >
+
+                <div class="search-input-container">
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Escribe un nombre, por ejemplo: pikachu"
+                        autocomplete="off"
+                        aria-label="Buscar Pokémon"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="searchButton"
+                    class="search-button"
+                >
+                    Buscar
+                </button>
+
+            </form>
+
+
+
+            <!-- Botones adicionales -->
+
+            <div class="action-buttons">
+
+                <button
+                    id="showAllButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    🔄 Explorar Pokémon
+                </button>
+
+
+                <button
+                    id="randomButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    🎲 Pokémon aleatorio
+                </button>
+
+
+                <button
+                    id="favoritesButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    ❤️ Favoritos
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MENSAJE DE CARGA
+             ================================================= -->
+
+        <div
+            id="loadingMessage"
+            class="message hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Consultando PokéAPI...
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MENSAJE DE ERROR
+             ================================================= -->
+
+        <div
+            id="errorMessage"
+            class="message error-message hidden"
+        >
+
+            <span>⚠️</span>
+
+            <p id="errorText"></p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULTADOS
+             ================================================= -->
+
+        <section class="results-section">
+
+
+            <div class="results-header">
+
+                <div>
+
+                    <h2 id="resultsTitle">
+                        Pokémon
+                    </h2>
+
+
+                    <p id="resultsCount">
+                        Explora los primeros Pokémon de la Pokédex.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BARRA DE PAGINACIÓN
+                 ================================================= -->
+
+            <nav
+                id="pagination"
+                class="pagination hidden"
+                aria-label="Navegación de la Pokédex"
+            >
+
+                <!--
+                    Los botones se generan dinámicamente
+                    mediante JavaScript.
+                -->
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 CONTENEDOR DE TARJETAS
+                 ================================================= -->
+
+            <div
+                id="pokemonContainer"
+                class="pokemon-grid"
+            ></div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            PokéExplorer © 2026
+        </p>
+
+
+        <p>
+
+            Datos proporcionados por
+
+            <a
+                href="https://pokeapi.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                PokéAPI
+            </a>
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

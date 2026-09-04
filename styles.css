@@ -1,0 +1,1189 @@
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --background: #f4f7fb;
+
+    --surface: #ffffff;
+
+    --surface-secondary: #f8fafc;
+
+    --text-primary: #172033;
+
+    --text-secondary: #667085;
+
+    --primary: #e53935;
+
+    --primary-dark: #c62828;
+
+    --border: #e4e7ec;
+
+    --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+
+    --radius: 18px;
+
+}
+
+
+/* =========================================================
+   MODO OSCURO
+   ========================================================= */
+
+body.dark-mode {
+
+    --background: #10141d;
+
+    --surface: #171d28;
+
+    --surface-secondary: #202735;
+
+    --text-primary: #f4f7fb;
+
+    --text-secondary: #aab4c4;
+
+    --border: #303948;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text-primary);
+
+    min-height: 100vh;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+button,
+input {
+
+    font: inherit;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.03);
+
+}
+
+
+.header-content {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 18px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 46px;
+
+    height: 46px;
+
+    background: var(--primary);
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+}
+
+
+.brand h1 {
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+}
+
+
+.brand p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    margin-top: 3px;
+
+}
+
+
+.theme-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+.theme-button:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.main-container {
+
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 50px 0 70px;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 40px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    background:
+        rgba(229, 57, 53, 0.1);
+
+    color: var(--primary);
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.hero h2 {
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero p {
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.search-section {
+
+    max-width: 900px;
+
+    margin: 0 auto 45px;
+
+}
+
+
+.search-form {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.search-input-container {
+
+    position: relative;
+
+    flex: 1;
+
+}
+
+
+.search-icon {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 17px;
+
+}
+
+
+.search-input-container input {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    color: var(--text-primary);
+
+    padding:
+        0 18px 0 48px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.search-input-container input::placeholder {
+
+    color: var(--text-secondary);
+
+}
+
+
+.search-input-container input:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(229, 57, 53, 0.1);
+
+}
+
+
+.search-button {
+
+    height: 52px;
+
+    padding: 0 28px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.search-button:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   BOTONES SECUNDARIOS
+   ========================================================= */
+
+.action-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.secondary-button {
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text-primary);
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.secondary-button:hover {
+
+    background: var(--surface-secondary);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   RESULTADOS
+   ========================================================= */
+
+.results-section {
+
+    width: 100%;
+
+}
+
+
+.results-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.results-header h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.results-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   BARRA DE PAGINACIÓN
+   ========================================================= */
+
+.pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 28px;
+
+    width: 100%;
+
+}
+
+
+/*
+ * Botones individuales de la paginación.
+ */
+
+.pagination-button {
+
+    min-width: 58px;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: var(--surface);
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.pagination-button:hover:not(:disabled) {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    transform: translateY(-1px);
+
+}
+
+
+/*
+ * Página actualmente seleccionada.
+ */
+
+.pagination-button.active {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+
+}
+
+
+/*
+ * Botones Anterior y Siguiente.
+ */
+
+.pagination-arrow {
+
+    min-width: 40px;
+
+    font-size: 17px;
+
+}
+
+
+/*
+ * Botones deshabilitados.
+ */
+
+.pagination-button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   GRID DE POKÉMON
+   ========================================================= */
+
+.pokemon-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.pokemon-card {
+
+    position: relative;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.pokemon-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(16, 24, 40, 0.13);
+
+}
+
+
+.pokemon-number {
+
+    display: block;
+
+    text-align: right;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+}
+
+
+.pokemon-image-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 150px;
+
+    background: var(--surface-secondary);
+
+    border-radius: 14px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.pokemon-image {
+
+    width: 145px;
+
+    height: 145px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.pokemon-card:hover .pokemon-image {
+
+    transform: scale(1.08);
+
+}
+
+
+.pokemon-name {
+
+    font-size: 20px;
+
+    text-transform: capitalize;
+
+    margin-bottom: 9px;
+
+}
+
+
+.pokemon-type {
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(229, 57, 53, 0.1);
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: capitalize;
+
+}
+
+
+/* =========================================================
+   FAVORITOS
+   ========================================================= */
+
+.favorite-button {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 12px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    z-index: 2;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.favorite-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+.favorite-button.active {
+
+    color: #e53935;
+
+}
+
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.message {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+}
+
+
+.error-message {
+
+    color: #c62828;
+
+    background:
+        rgba(229, 57, 53, 0.08);
+
+    border-color:
+        rgba(229, 57, 53, 0.2);
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.spinner {
+
+    width: 22px;
+
+    height: 22px;
+
+    border: 3px solid var(--border);
+
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   ESTADO VACÍO
+   ========================================================= */
+
+.empty-state {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    color: var(--text-secondary);
+
+}
+
+
+.empty-state-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.empty-state h3 {
+
+    color: var(--text-primary);
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+    border-top: 1px solid var(--border);
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+.footer a {
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.footer a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pokemon-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+    }
+
+
+    .pagination {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding: 5px 2px 10px;
+
+        scrollbar-width: thin;
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .header-content {
+
+        padding: 15px 18px;
+
+    }
+
+
+    .brand h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    .brand p {
+
+        font-size: 11px;
+
+    }
+
+
+    .brand-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 20px;
+
+    }
+
+
+    .main-container {
+
+        width: 90%;
+
+        padding-top: 35px;
+
+    }
+
+
+    .hero {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .search-form {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-button {
+
+        width: 100%;
+
+    }
+
+
+    .action-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .secondary-button {
+
+        width: 100%;
+
+    }
+
+
+    /*
+     * La paginación se puede desplazar horizontalmente
+     * en pantallas pequeñas.
+     */
+
+    .pagination {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        width: calc(100vw - 10%);
+
+        margin-left: 0;
+
+        padding-bottom: 12px;
+
+        scrollbar-width: thin;
+
+    }
+
+
+    .pagination-button {
+
+        flex-shrink: 0;
+
+    }
+
+
+    .pokemon-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+    }
+
+
+    .pokemon-card {
+
+        padding: 12px;
+
+    }
+
+
+    .pokemon-image-container {
+
+        min-height: 120px;
+
+    }
+
+
+    .pokemon-image {
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+
+    .pokemon-name {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .pokemon-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .pokemon-image {
+
+        width: 140px;
+
+        height: 140px;
+
+    }
+
+}
